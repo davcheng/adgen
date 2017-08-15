@@ -5,8 +5,7 @@ def main():
     with open("Amazon_Unlocked_Mobile_copy.csv") as csvfile:
         spamreader = csv.reader(csvfile, delimiter=',')
         for row in spamreader:
-            # if row[]
-            # row[4]
+            # filter out anything not greater than 4 star reviews (ie keep only five star reviews)
             if row[3]>4:
                 with open("five_star_reviews.txt", "a") as output_file:
                     output_file.write(row[4])
